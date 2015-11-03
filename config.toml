@@ -1,0 +1,39 @@
+baseurl = "http://zhaojames0707.github.com/"
+languageCode = "zh-CN"
+title = "Mission Namek"
+paginate = 10
+DisqusShortname = "missionnamek"
+Copyright = "All rights reserved - 2015"
+canonifyurls = true
+
+[permalinks]
+post = "/:year/:month/:title"
+
+[params]
+  description = "Hello, world!"
+  cover = "images/code.jpg"
+  author = "James Zhao"
+  authorlocation = "Beijing, China"
+  authorwebsite = "http://zhaojames0707.github.com"
+  bio = "Python developer"
+  logo = "images/logo.jpeg"
+  githubName = "zhaojames0707"
+  # twitterName = "zhaojames0707"
+
+[[menu.main]]
+  name = "My Blog"
+  weight = -120
+  identifier = "blog"
+  url = "/"
+
+[[menu.main]]
+  name = "About me"
+  weight = -110
+  identifier = "about"
+  url = "/about"
+
+[[menu.main]]
+  name = "Github repos"
+  weight = 100
+  pre = "<h3>Follow me</h3>"
+  url = "https://github.com/zhaojames0707"
