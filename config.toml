@@ -1,16 +1,16 @@
-baseurl = "http://zhaojames0707.github.com/"
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+builddrafts = false
+baseurl = "http://zhaojames0707.github.io/"
 languageCode = "zh-CN"
 title = "Mission Namek"
 paginate = 10
-DisqusShortname = "missionnamek"
-Copyright = "All rights reserved - 2015"
-canonifyurls = true
-
-[permalinks]
-post = "/:year/:month/:title"
+Copyright = "All rights reserved - 2016"
+disqusShortname = "missionnamek"
 
 [params]
-  description = "Hello, world!"
+  description = "We live and die by your order, Boss!"
   cover = "images/code.jpg"
   author = "James Zhao"
   authorlocation = "Beijing, China"
@@ -18,10 +18,9 @@ post = "/:year/:month/:title"
   bio = "Python developer"
   logo = "images/logo.jpeg"
   githubName = "zhaojames0707"
-  # twitterName = "zhaojames0707"
 
 [[menu.main]]
-  name = "My Blog"
+  name = "Blog"
   weight = -120
   identifier = "blog"
   url = "/"

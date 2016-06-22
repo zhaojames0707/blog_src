@@ -10,4 +10,4 @@ title = "About me"
 
 +++
 
-程序员，就职于北京一家互联网公司，主要使用 Python 写 Restful API。喜爱 Mac OS X；Vim 拥护者。
+Python 程序员，熟悉 Java，喜爱 macOS/Linux/Vim。
