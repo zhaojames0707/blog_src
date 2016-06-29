@@ -14,7 +14,7 @@ discription = "foo"
 MkDocs 是非常方便的文档展示工具，但是原生不支持将 markdown 文档中的 sequence 及 flow 代码转换为时序图/流程图。
 通过以下简单的3步，即可在不改变 markdown 文档的情况下，将时序图和流程图绘制出来。
 
-<!--more-->>
+<!--more-->
 
 #### 一、安装 PyMdown Extensions:
 
