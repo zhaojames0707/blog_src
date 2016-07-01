@@ -45,7 +45,7 @@ connection.close()
 
 但是，这两个都不适合我的程序：
 
-* 方法1是针对 Model 操作间隔一定很长的情况，如果某个时间段内需要很频繁的操作数据库，那么频繁关闭-新建数据库连接无疑是低效的。
+* 方法1是针对 Model 操作间隔一定很长的情况，如果某个时间段内需要很频繁的操作数据库，那么频繁关闭-新建数据库连接无疑是低效的。而且，connection 是与默认的数据库的连接，即 settings 中定义的 default 数据库。如果项目配置了多个数据库(列如主从数据库)，那么 ```connection.close()```则不能与关闭其他数据库的连接，问题仍未解决。
 * 方法2直接修改数据库超时时间，很容易影响别的服务，会带来很多潜在的问题。
 
 针对我的情况，我参考了 Django 源码涉及数据库连接维护的部分。
@@ -62,7 +62,7 @@ signals.request_started.connect(close_old_connections)
 signals.request_finished.connect(close_old_connections)
 ```
 
-可见，Django 将*请求开始*/*请求结束*信号绑定给了 ```close_old_connections```函数，每当有请求开始和结束以后，Django 都会检查目前又没有失效的连接，如果有的话就将其关闭。通过这种办法，Django 保证处理请求时，数据库连接都是可用的，不会出现我遇到的问题；而我的程序在涉及 Model 操作时，没有检查连接的有效性，因而出现了题目中的错误。
+可见，Django 将**请求开始**和**请求结束**信号绑定给了 ```close_old_connections```函数，每当有请求开始和结束以后，Django 都会检查目前有没有失效的连接，如果有的话就将其关闭。通过这种办法，Django 保证处理请求时，数据库连接都是可用的，不会出现我遇到的问题；而我的程序在涉及 Model 操作时，没有检查连接的有效性，因而出现了题目中的错误。
 
 ### 解决问题
 
@@ -70,14 +70,12 @@ signals.request_finished.connect(close_old_connections)
 仿照上述代码，定义函数：
 
 ```python
-from django import connection
+from django import connections
 
-def close_unusable_connection():
-    if not connection.connection:
-        return
-    if connection.is_usable():
-        return
-    connection.close()
+
+def close_old_connections():
+    for conn in connections.all():
+        conn.close_if_unusable_or_obsolete()
 ```
 
-然后在每次 Model 操作前调用```close_unusable_connection()```就解决问题了。当然，直接从```django.db```中引入```close_old_connections```然后调用应该也能解决问题，且支持多个连接的情况，请各位自行尝试。
+然后在每次 Model 操作前调用```close_old_connections()```就解决问题了。

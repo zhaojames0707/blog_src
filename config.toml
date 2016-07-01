@@ -18,6 +18,7 @@ disqusShortname = "missionnamek"
   bio = "Python developer"
   logo = "images/logo.jpeg"
   githubName = "zhaojames0707"
+  googleAnalytics = "UA-79714931-1"
 
 [[menu.main]]
   name = "Blog"

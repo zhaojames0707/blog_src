@@ -159,3 +159,13 @@ extra_javascript:
 	```
 
 自动渲染成流程图和时序图。
+
+**注意：**该方法不一定对所有 MkDocs 主题生效，默认的主题不生效，readthedocs/bootstrap/bootswatch主题生效。原因可能是各主题模板中添加 extra_javascript 的位置不同。如果使用的主题不生效，可以删除 mkdocs.yml 中添加的 extra_javascript，在每个需要显示流程图/时序图的 markdown 文档末尾处手动加上：
+
+```html
+<script src="../../js/raphael-min.js"></script>
+<script src="../../js/underscore-min.js"></script>
+<script src="../../js/sequence-diagram-min.js"></script>
+<script src="../../js/uml-converter.js"></script>
+<script src="../../js/sequence-loader.js"></script>
+```
