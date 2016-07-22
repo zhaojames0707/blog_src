@@ -33,6 +33,13 @@ disqusShortname = "missionnamek"
   url = "/about"
 
 [[menu.main]]
+  name = "yunsonbai"
+  weight = -100
+  identifier = "links/yunsonbai"
+  pre = "<h3>友情链接</h3>"
+  url = "http://www.yunsonbai.top/"
+
+[[menu.main]]
   name = "Github repos"
   weight = 100
   pre = "<h3>Follow me</h3>"
