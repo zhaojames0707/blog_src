@@ -5,11 +5,9 @@ date = "2016-11-18T15:46:18+08:00"
 draft = false
 share = true
 tags = ["ubuntu", "QQ", "wine", "winetricks"]
-title = "解决 Ubuntu 下 KeePass2 中文显示为方块的问题"
+title = "在 Ubuntu 16.04 中使用 QQ。"
 
 +++
-
-在 Ubuntu 16.04 中使用 QQ。
 
 <!--more-->
 
