@@ -5,7 +5,7 @@ date = "2016-11-18T15:46:18+08:00"
 draft = false
 share = true
 tags = ["ubuntu", "QQ", "wine", "winetricks"]
-title = "在 Ubuntu 16.04 中使用 QQ。"
+title = "在 Ubuntu 16.04 中使用 QQ"
 
 +++
 
