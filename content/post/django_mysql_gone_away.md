@@ -70,7 +70,7 @@ signals.request_finished.connect(close_old_connections)
 仿照上述代码，定义函数：
 
 ```python
-from django import connections
+from django.db import connections
 
 
 def close_old_connections():
