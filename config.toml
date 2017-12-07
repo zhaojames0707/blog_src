@@ -14,7 +14,7 @@ disqusShortname = "missionnamek"
   cover = "images/code.jpg"
   author = "James Zhao"
   authorlocation = "Beijing, China"
-  authorwebsite = "http://zhaojames0707.github.io"
+  authorwebsite = "https://zhaojames0707.github.io"
   bio = "Python developer"
   logo = "images/logo.jpeg"
   githubName = "zhaojames0707"
@@ -37,7 +37,7 @@ disqusShortname = "missionnamek"
   weight = -100
   identifier = "links/yunsonbai"
   pre = "<h3>友情链接</h3>"
-  url = "http://www.yunsonbai.top/"
+  url = "https://www.yunsonbai.top/"
 
 [[menu.main]]
   name = "Github repos"
