@@ -11,6 +11,14 @@ title = "在 Ubuntu 16.04 中使用 QQ"
 
 <!--more-->
 
+**更新于2018-02-13**
+
+已有更方便使用的基于 AppImage 的 QQ 及 Tim，参见：https://github.com/askme765cs/Wine-QQ-TIM
+
+以下内容不需再看。
+
+----
+
 工作中经常需要使用 QQ，但是众所周知 Linux 下没有官方版的 QQ。还好在 Wine + Winetricks 的帮助下，使用 QQ 不再是难事。
 
 #### 1. 安装 Wine
